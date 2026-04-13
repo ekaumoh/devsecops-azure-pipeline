@@ -1,0 +1,35 @@
+name: Checkov Security Scan
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  checkov:
+    name: Scan Terraform with Checkov
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Checkov
+        run: pip install checkov
+
+      - name: Run Checkov scan
+        run: >
+          checkov
+          -d terraform/
+          --framework terraform
+          --soft-fail-on CKV_AZURE_206
+          --soft-fail-on CKV2_AZURE_33
+          --soft-fail-on CKV2_AZURE_1
+          --output cli
+          --output-file-path console

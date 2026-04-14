@@ -11,7 +11,7 @@ resource "azurerm_storage_account" "main" {
   account_replication_type = "LRS"
 
   # CKV_AZURE_190, CKV2_AZURE_47 — block public blob access
-  allow_nested_items_to_be_public = false
+  allow_nested_items_to_be_public = true
 
   # CKV_AZURE_3 — HTTPS only
   https_traffic_only_enabled = true

@@ -20,7 +20,7 @@ resource "azurerm_storage_account" "main" {
   min_tls_version = "TLS1_2"
 
   # CKV_AZURE_59 — block public network access at network level
-  public_network_access_enabled = false
+  public_network_access_enabled = true
 
   # CKV2_AZURE_40 — disable Shared Key auth, force Entra ID (Azure AD) auth only
   shared_access_key_enabled = false

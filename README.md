@@ -41,6 +41,7 @@ The test/insecure-config branch in this repo demonstrates the gate working — a
 - [x] Checkov local scan (11 passing, 3 intentional soft-fails)
 - [x] GitHub Actions pipeline on push and pull request
 - [x] Branch protection enforcing required Checkov pass
-- [ ] Azure deployment via service principal (in progress)
+- [x] Azure deployment via service principal
+- [x] Persistent Terraform state via Azure blob backend
 - [ ] Microsoft Defender for Cloud integration
 - [ ] Microsoft Sentinel analytic rule

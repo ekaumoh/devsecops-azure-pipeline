@@ -13,6 +13,7 @@ terraform {
     container_name       = "tfstate"
     key                  = "devsecops.terraform.tfstate"
     use_azuread_auth     = true
+    use_oidc             = true
   }
 }
 

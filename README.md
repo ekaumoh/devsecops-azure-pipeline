@@ -103,7 +103,7 @@ The service principal `sp-devsecops-pipeline` holds the minimum role assignments
 |---|---|---|
 | Contributor | `/resourceGroups/rg-devsecops-demo` | Deploy and manage resources in the target RG only |
 | Storage Blob Data Contributor | `stterraformstate18262` | Read/write Terraform state via Entra ID, not access keys |
-| Reader | `/resourceGroups/rg-terraform-state` | Discover the backend container at init time |
+| Reader | `stterraformstate18262` (account scope, in `rg-tfstate-platform`) | Discover the backend container at init time |
 
 ---
 
